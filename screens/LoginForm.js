@@ -23,7 +23,8 @@ const LoginForm = ({ navigation }) => {
           <Text style={styles.title}> Iniciar sesión </Text>
         </View>
         <TextInput
-          accessibilityLabel="Ingresar correo electronico"
+          accessibilityLabel="Correo electronico"
+          accessibilityHint="Escribe tu correo electronico"
           label="Correo"
           value={correo}
           onChangeText={setCorreo}
@@ -31,7 +32,8 @@ const LoginForm = ({ navigation }) => {
           style={styles.textInput}
         />
         <TextInput
-          accessibilityLabel="Ingresar contraseña"
+          accessibilityLabel="Contraseña"
+          accessibilityHint="Escribe tu contraseña"
           label="Contraseña"
           value={password}
           onChangeText={setPassword}
