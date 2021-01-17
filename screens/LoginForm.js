@@ -1,18 +1,21 @@
-import React, { useState } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import Ionicons from 'react-native-vector-icons/Ionicons';
-import { TextInput, IconButton } from 'react-native-paper';
+import React, { useState } from "react";
+import { Text, View, StyleSheet } from "react-native";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import Ionicons from "react-native-vector-icons/Ionicons";
+import { TextInput, IconButton } from "react-native-paper";
 
 const LoginForm = ({ navigation }) => {
-  const [correo, setCorreo] = useState('');
-  const [password, setPassword] = useState('');
+  const [correo, setCorreo] = useState("");
+  const [password, setPassword] = useState("");
 
   return (
     <View style={styles.container}>
-      <View style={styles.whiteBox}>
-        <View style={styles.header}>
+      <View accessible={true} style={styles.whiteBox}>
+        <View accessible={true} style={styles.header}>
           <IconButton
+            accessibilityRole="button"
+            accessibilityLabel="Retroceder"
+            accessibilityHint="Navega a la pagina anterior"
             icon={() => <FontAwesome name="close" size={40} />}
             size={25}
             onPress={() => navigation.goBack()}
@@ -20,6 +23,7 @@ const LoginForm = ({ navigation }) => {
           <Text style={styles.title}> Iniciar sesión </Text>
         </View>
         <TextInput
+          accessibilityLabel="Ingresar correo electronico"
           label="Correo"
           value={correo}
           onChangeText={setCorreo}
@@ -27,6 +31,7 @@ const LoginForm = ({ navigation }) => {
           style={styles.textInput}
         />
         <TextInput
+          accessibilityLabel="Ingresar contraseña"
           label="Contraseña"
           value={password}
           onChangeText={setPassword}
@@ -34,16 +39,19 @@ const LoginForm = ({ navigation }) => {
           secureTextEntry={true}
           style={styles.textInput}
         />
-        <View style={styles.checkButton}>
+        <View accessible={true} style={styles.checkButton}>
           <IconButton
-            icon={props => (
+            accessibilityRole="button"
+            accessibilityLabel="Confirmar"
+            accessibilityHint="Confirma tus datos y avanza a inicio"
+            icon={(props) => (
               <Ionicons name="ios-checkmark-circle" size={80} color="#fcba03" />
             )}
             size={45}
             onPress={() => {
               navigation.reset({
                 index: 0,
-                routes: [{ name: 'TabNavigator' }]
+                routes: [{ name: "TabNavigator" }],
               });
             }}
             style={styles.iconShadow}
@@ -57,50 +65,50 @@ const LoginForm = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-    backgroundColor: '#fcba03'
+    alignItems: "center",
+    justifyContent: "center",
+    backgroundColor: "#fcba03",
   },
   whiteBox: {
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "white",
+    alignItems: "center",
+    justifyContent: "center",
     padding: 20,
     borderRadius: 25,
-    maxWidth: '90%',
+    maxWidth: "90%",
     elevation: 3,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
-    shadowRadius: 2
+    shadowRadius: 2,
   },
   header: {
-    flexDirection: 'row',
+    flexDirection: "row",
     marginBottom: 30,
-    maxWidth: '90%'
+    maxWidth: "90%",
   },
   checkButton: {
-    flexDirection: 'row',
-    alignSelf: 'flex-end'
+    flexDirection: "row",
+    alignSelf: "flex-end",
   },
   textInput: {
-    minWidth: '100%',
+    minWidth: "100%",
     maxHeight: 70,
-    marginBottom: 40
+    marginBottom: 40,
   },
   iconShadow: {
     elevation: 3,
-    shadowColor: '#000',
+    shadowColor: "#000",
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.8,
-    shadowRadius: 2
+    shadowRadius: 2,
   },
   title: {
     marginTop: 15,
     marginLeft: 15,
     fontSize: 45,
-    fontWeight: 'bold'
-  }
+    fontWeight: "bold",
+  },
 });
 
 export default LoginForm;
