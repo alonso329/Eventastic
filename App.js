@@ -1,20 +1,20 @@
-import React from 'react';
-import { StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import FontAwesome from 'react-native-vector-icons/FontAwesome';
-import LoginHome from './screens/LoginHome.js';
-import LoginForm from './screens/LoginForm.js';
-import Home from './screens/Home.js';
-import Search from './screens/Search.js';
-import Profile from './screens/Profile.js';
-import Register from './screens/Register.js';
-import RegisterConfirmation from './screens/registerConfirmation';
-import VerMas from './screens/VerMas.js';
-import MusicCategory from './screens/MusicCategory.js';
-import Settings from './screens/Settings.js';
-import newEvent from './screens/newEvent.js';
+import React from "react";
+import { StyleSheet, Image, TouchableOpacity } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import FontAwesome from "react-native-vector-icons/FontAwesome";
+import LoginHome from "./screens/LoginHome.js";
+import LoginForm from "./screens/LoginForm.js";
+import Home from "./screens/Home.js";
+import Search from "./screens/Search.js";
+import Profile from "./screens/Profile.js";
+import Register from "./screens/Register.js";
+import RegisterConfirmation from "./screens/registerConfirmation";
+import VerMas from "./screens/VerMas.js";
+import MusicCategory from "./screens/MusicCategory.js";
+import Settings from "./screens/Settings.js";
+import newEvent from "./screens/newEvent.js";
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
@@ -63,40 +63,50 @@ const TabNavigator = () => {
         tabBarIcon: ({ color, size }) => {
           let iconName;
 
-          if (route.name === 'HomeStack') {
-            iconName = 'home';
-          } else if (route.name === 'SearchStack') {
-            iconName = 'search';
-          } else if (route.name === 'ProfileStack') {
-            iconName = 'user';
+          if (route.name === "HomeStack") {
+            iconName = "home";
+          } else if (route.name === "SearchStack") {
+            iconName = "search";
+          } else if (route.name === "ProfileStack") {
+            iconName = "user";
           }
 
           // You can return any component that you like here!
-          return <FontAwesome name={iconName} size={size} color={color} />;
-        }
+          return (
+            <FontAwesome
+              name={iconName}
+              size={size}
+              color={color}
+              accessible={true}
+              accessibilityLabel={iconName}
+              accessibilityRole="menuitem"
+              accessibilityHint={`Navegar a la pagina de ${iconName}`}
+            />
+          );
+        },
       })}
       tabBarOptions={{
-        activeTintColor: 'white',
-        inactiveTintColor: 'black',
+        activeTintColor: "white",
+        inactiveTintColor: "black",
         style: {
-          backgroundColor: '#fcba03'
-        }
+          backgroundColor: "#fcba03",
+        },
       }}
     >
       <Tab.Screen
         name="HomeStack"
         component={HomeStackNavigator}
-        options={{ title: 'Inicio' }}
+        options={{ title: "Inicio" }}
       />
       <Tab.Screen
         name="SearchStack"
         component={SearchStackNavigator}
-        options={{ title: 'Buscar' }}
+        options={{ title: "Buscar" }}
       />
       <Tab.Screen
         name="ProfileStack"
         component={ProfileStackNavigator}
-        options={{ title: 'Perfil' }}
+        options={{ title: "Perfil" }}
       />
     </Tab.Navigator>
   );
@@ -154,7 +164,11 @@ const ProfileStackNavigator = () => {
         component={VerMas}
         options={{ headerShown: false }}
       />
-      <ProfileStack.Screen name="Ajustes" component={Settings} options={{ headerShown: false }} />
+      <ProfileStack.Screen
+        name="Ajustes"
+        component={Settings}
+        options={{ headerShown: false }}
+      />
       <ProfileStack.Screen
         name="newEvent"
         component={newEvent}
