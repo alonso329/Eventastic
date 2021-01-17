@@ -1,31 +1,42 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
   StyleSheet,
   ImageBackground,
-  TouchableOpacity
-} from 'react-native';
-import { Appbar, Switch, Button } from 'react-native-paper';
+  TouchableOpacity,
+} from "react-native";
+import { Appbar, Switch, Button } from "react-native-paper";
 
 const Settings = ({ navigation }) => {
   const [active, setActive] = useState(false);
 
   return (
     <View style={styles.container}>
-      <Appbar.Header style={{ backgroundColor: '#fcba03' }}>
+      <Appbar.Header style={{ backgroundColor: "#fcba03" }} accessible={true}>
         <Appbar.BackAction
           onPress={() => {
             navigation.goBack();
           }}
           color="white"
+          accessibilityLabel="Volver"
+          accessibilityRole="button"
+          accessibilityHint="Volver a la pagina anterior"
         />
-        <Appbar.Content title="Ajustes" color="white" />
+        <Appbar.Content
+          title="Ajustes"
+          color="white"
+          accessibilityRole="header"
+        />
       </Appbar.Header>
-      <View style={styles.content}>
-        <TouchableOpacity>
+      <View style={styles.content} accessible={true}>
+        <TouchableOpacity
+          accessibilityRole="imagebutton"
+          accessibilityLabel="Imagen de perfil"
+          accessibilityHint="Escoge una nueva imagen de perfil"
+        >
           <ImageBackground
-            source={require('../assets/diego.jpg')}
+            source={require("../assets/diego.jpg")}
             style={styles.image}
           >
             <View style={styles.imageView}>
@@ -33,51 +44,79 @@ const Settings = ({ navigation }) => {
             </View>
           </ImageBackground>
         </TouchableOpacity>
-        <View style={{ width: '80%' }}>
+        <View style={{ width: "80%" }} accessible={true}>
           <View
             style={{
-              flexDirection: 'row',
-              justifyContent: 'space-between'
+              flexDirection: "row",
+              justifyContent: "space-between",
             }}
+            accessible={true}
           >
-            <Text style={styles.labels}>Pausar Notificaciones</Text>
+            <Text style={styles.labels} accessibilityRole="text">
+              Pausar Notificaciones
+            </Text>
             <Switch
               style={{ marginTop: 25 }}
               value={active}
               onValueChange={() => setActive(!active)}
+              accessibilityRole="switch"
+              accessibilityLabel="Switch de pausar notificaciones"
+              accessibilityHint="Activalo para pausar las notificaciones de la app"
             />
           </View>
-          <TouchableOpacity>
+          <TouchableOpacity
+            accessibilityRole="button"
+            accessibilityLabel="Nombre de usuario"
+            accessibilityHint="Presiona para editar tu nombre de usuario"
+          >
             <Text style={styles.labels}>Nombre de Usuario</Text>
           </TouchableOpacity>
-          <Text style={styles.subLabels}>Diego Contreras</Text>
-          <TouchableOpacity>
+          <Text style={styles.subLabels} accessibilityRole="text">
+            Diego Contreras
+          </Text>
+          <TouchableOpacity
+            accessibilityRole="button"
+            accessibilityLabel="Correo Electronico"
+            accessibilityHint="Presiona para editar tu correo electronico"
+          >
             <Text style={styles.labels}>Correo electrónico</Text>
           </TouchableOpacity>
-          <Text style={styles.subLabels}>dcontreras12@ucol.mx</Text>
-          <TouchableOpacity>
+          <Text style={styles.subLabels} accessibilityRole="text">
+            dcontreras12@ucol.mx
+          </Text>
+          <TouchableOpacity
+            accessibilityRole="button"
+            accessibilityLabel="Cambiar contraseña"
+            accessibilityHint="Presiona para cambiar tu contraseña"
+          >
             <Text style={styles.labels}>Cambiar contraseña</Text>
           </TouchableOpacity>
 
           <Button
             icon="help-circle-outline"
             mode="text"
-            onPress={() => console.log('Pressed')}
+            onPress={() => console.log("Pressed")}
             style={[styles.textButton, { marginTop: 40 }]}
             color="black"
             labelStyle={styles.buttonLabels}
             uppercase={false}
+            accessibilityRole="button"
+            accessibilityLabel="Ayuda"
+            accessibilityHint="Navegar a la pagina de ayuda"
           >
             Ayuda
           </Button>
           <Button
             icon="exit-to-app"
             mode="text"
-            onPress={() => console.log('Pressed')}
+            onPress={() => console.log("Pressed")}
             style={styles.textButton}
             color="red"
             labelStyle={styles.buttonLabels}
             uppercase={false}
+            accessibilityRole="button"
+            accessibilityLabel="Cerrar sesion"
+            accessibilityHint="Cierra tu sesion y vuelve a la pagina de inicio"
           >
             Cerrar Sesión
           </Button>
@@ -90,42 +129,42 @@ const Settings = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'white'
+    backgroundColor: "white",
   },
   content: {
     flex: 1,
-    alignItems: 'center',
-    padding: 15
+    alignItems: "center",
+    padding: 15,
   },
   image: {
     width: 220,
     height: 220,
-    justifyContent: 'flex-end'
+    justifyContent: "flex-end",
   },
   imageView: {
-    alignItems: 'center',
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
-    padding: 10
+    alignItems: "center",
+    backgroundColor: "rgba(0, 0, 0, 0.6)",
+    padding: 10,
   },
   imageText: {
-    color: 'white'
+    color: "white",
   },
   labels: {
     fontSize: 17,
-    fontWeight: 'bold',
-    marginTop: 25
+    fontWeight: "bold",
+    marginTop: 25,
   },
   subLabels: {
     fontSize: 12,
     marginTop: 5,
-    color: '#949494'
+    color: "#949494",
   },
   textButton: {
-    alignSelf: 'flex-start'
+    alignSelf: "flex-start",
   },
   buttonLabels: {
-    fontSize: 16
-  }
+    fontSize: 16,
+  },
 });
 
 export default Settings;
