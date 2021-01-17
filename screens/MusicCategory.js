@@ -8,7 +8,7 @@ const MusicCategory = ({ navigation }) => {
       <View accessible={true} style={styles.container}>
         <Text style={styles.title}>Música</Text>
         <Text style={styles.subtitle}>Esta semana</Text>
-        <Card elevation={2} style={styles.card}>
+        <Card accessible={true} elevation={2} style={styles.card}>
           <Card.Title
             accessibilityRole="text"
             subtitle="MIE, JUNIO 25 - 8:00 PM"
@@ -20,8 +20,8 @@ const MusicCategory = ({ navigation }) => {
             style={styles.cardImage}
           />
           <Card.Content>
-            <Title>Garage Band(a)</Title>
-            <Paragraph>Garage</Paragraph>
+            <Title accessibilityRole="header">Garage Band(a)</Title>
+            <Paragraph accessibilityRole="text">Garage</Paragraph>
           </Card.Content>
           <Card.Actions>
             <Button
@@ -51,7 +51,7 @@ const MusicCategory = ({ navigation }) => {
             </Button>
           </Card.Actions>
         </Card>
-        <Card elevation={2} style={styles.card}>
+        <Card accessible={true} elevation={2} style={styles.card}>
           <Card.Title
             accessibilityRole="text"
             subtitle="MIE, JUNIO 25 - 8:00 PM"
@@ -63,8 +63,8 @@ const MusicCategory = ({ navigation }) => {
             style={styles.cardImage}
           />
           <Card.Content>
-            <Title>Vocaloid</Title>
-            <Paragraph>Casa de Hatsune</Paragraph>
+            <Title accessibilityRole="header">Vocaloid</Title>
+            <Paragraph accessibilityRole="text">Casa de Hatsune</Paragraph>
           </Card.Content>
           <Card.Actions>
             <Button
