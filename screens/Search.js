@@ -18,8 +18,10 @@ const Search = ({ navigation }) => {
           <Searchbar
             accessibilityLabel="Buscar"
             accessibilityRole="search"
+            accessibilityHint="Escribe una categoria de musica para buscarla en la aplicacion"
             placeholder="Busca aquí..."
             style={{ backgroundColor: "#dedede" }}
+            theme={{ colors: { placeholder: "#3d3d3d" } }}
           />
           <Text style={styles.subtitle}>Categorías</Text>
           <View accessible={true} style={styles.card}>
@@ -52,7 +54,7 @@ const Search = ({ navigation }) => {
                 <Card.Title
                   title="Político"
                   titleStyle={styles.cardTitle}
-                  style={{ backgroundColor: "#35cc65" }}
+                  style={{ backgroundColor: "#007d19" }}
                   left={() => (
                     <Ionicon name="ios-bookmarks" size={35} color="white" />
                   )}
@@ -71,7 +73,7 @@ const Search = ({ navigation }) => {
                 <Card.Title
                   title="Arte"
                   titleStyle={styles.cardTitle}
-                  style={{ backgroundColor: "#de4545" }}
+                  style={{ backgroundColor: "#7d0000" }}
                   left={() => (
                     <Ionicon name="md-brush" size={35} color="white" />
                   )}
@@ -90,7 +92,7 @@ const Search = ({ navigation }) => {
                 <Card.Title
                   title="Comida"
                   titleStyle={styles.cardTitle}
-                  style={{ backgroundColor: "#4fd9db" }}
+                  style={{ backgroundColor: "#00707d" }}
                   left={() => (
                     <Ionicon name="md-pizza" size={35} color="white" />
                   )}

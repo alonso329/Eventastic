@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
     elevation: 2,
   },
   buttonConfirm: {
-    backgroundColor: "#fcba03",
+    backgroundColor: "#a36a00",
     paddingVertical: 10,
     paddingHorizontal: 22,
     borderRadius: 40,

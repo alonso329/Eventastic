@@ -19,6 +19,7 @@ const Settings = ({ navigation }) => {
             navigation.goBack();
           }}
           color="white"
+          size={35}
           accessibilityLabel="Volver"
           accessibilityRole="button"
           accessibilityHint="Volver a la pagina anterior"
@@ -56,7 +57,12 @@ const Settings = ({ navigation }) => {
               Pausar Notificaciones
             </Text>
             <Switch
-              style={{ marginTop: 25 }}
+              style={{
+                marginTop: 25,
+                transform: [{ scaleX: 1.5 }, { scaleY: 1.5 }],
+                width: 60,
+                height: 48,
+              }}
               value={active}
               onValueChange={() => setActive(!active)}
               accessibilityRole="switch"
@@ -103,6 +109,7 @@ const Settings = ({ navigation }) => {
             accessibilityRole="button"
             accessibilityLabel="Ayuda"
             accessibilityHint="Navegar a la pagina de ayuda"
+            labelStyle={{ fontSize: 22 }}
           >
             Ayuda
           </Button>
@@ -111,12 +118,13 @@ const Settings = ({ navigation }) => {
             mode="text"
             onPress={() => console.log("Pressed")}
             style={styles.textButton}
-            color="red"
+            color="#c90000"
             labelStyle={styles.buttonLabels}
             uppercase={false}
             accessibilityRole="button"
             accessibilityLabel="Cerrar sesion"
             accessibilityHint="Cierra tu sesion y vuelve a la pagina de inicio"
+            labelStyle={{ fontSize: 22 }}
           >
             Cerrar Sesión
           </Button>
@@ -157,7 +165,7 @@ const styles = StyleSheet.create({
   subLabels: {
     fontSize: 12,
     marginTop: 5,
-    color: "#949494",
+    color: "#595959",
   },
   textButton: {
     alignSelf: "flex-start",
