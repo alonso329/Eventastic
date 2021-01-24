@@ -35,10 +35,11 @@ const Asistir = () => {
           </Card.Content>
           <Card.Actions>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Ver mas"
               accessibilityHint="Muestra descripcion del evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 navigation.push("VerMas");
               }}
@@ -46,10 +47,11 @@ const Asistir = () => {
               VER MÁS
             </Button>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Dejar de asistir"
               accessibilityHint="Ya no asistiras al evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 Alert.alert(
                   "Dejarás de asistir a After party",
@@ -78,10 +80,10 @@ const Asistir = () => {
           </Card.Content>
           <Card.Actions>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Ver mas"
-              accessibilityHint="Muestra descripcion del evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 navigation.push("VerMas");
               }}
@@ -89,10 +91,10 @@ const Asistir = () => {
               VER MÁS
             </Button>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Dejar de asistir"
-              accessibilityHint="Ya no asistiras al evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 Alert.alert(
                   "Dejarás de asistir a Lectura de Biblia",
@@ -132,10 +134,11 @@ const Eventos = () => {
             </Card.Content>
             <Card.Actions>
               <Button
+                labelStyle={{ fontSize: 22 }}
                 accessibilityRole="button"
                 accessibilityLabel="Editar"
                 accessibilityHint="Pasa a editar la informacion del evento"
-                color="#fcba03"
+                color="#a36a00"
                 onPress={() => {
                   navigation.push("newEvent");
                 }}
@@ -147,6 +150,10 @@ const Eventos = () => {
         </View>
       </ScrollView>
       <FAB
+        accessible={true}
+        accessibilityRole="button"
+        accessibilityLabel="Agregar"
+        accessibilityHint="Pasa a agregar un nuevo evento"
         style={styles.fab}
         icon="plus"
         onPress={() => navigation.push("newEvent")}
@@ -163,7 +170,7 @@ const renderTabBar = (props) => (
     {...props}
     indicatorStyle={{ backgroundColor: "black" }}
     activeColor="black"
-    inactiveColor="#c9c9c9"
+    inactiveColor="#707070"
     labelStyle={{ fontWeight: "bold", fontSize: 18 }}
     style={{ backgroundColor: "white" }}
   />
@@ -183,10 +190,17 @@ const Profile = ({ navigation }) => {
 
   return (
     <View style={{ flex: 1 }}>
-      <Appbar.Header statusBarHeight={50} style={{ backgroundColor: "white" }}>
+      <Appbar.Header
+        accessible={true}
+        statusBarHeight={50}
+        style={{ backgroundColor: "white" }}
+      >
         <Appbar.Content title="Diego Contreras" titleStyle={styles.title} />
         <Appbar.Action
           size={50}
+          accessibilityRole="imagebutton"
+          accessibilityLabel="Profile image"
+          accessibilityHint="Te lleva a ajustes de perfil"
           icon={() => (
             <Avatar.Image size={50} source={require("../assets/diego.jpg")} />
           )}
@@ -228,7 +242,7 @@ const styles = StyleSheet.create({
   fab: {
     position: "absolute",
     margin: 20,
-    backgroundColor: "#fcba03",
+    backgroundColor: "#a36a00",
     right: 0,
     bottom: 0,
   },
