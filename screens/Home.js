@@ -95,7 +95,9 @@ const Home = ({ navigation }) => {
             </Button>
           </Card.Actions>
         </Card>
-        <Text style={styles.subtitle} accessibilityRole="text">Esta tarde</Text>
+        <Text style={styles.subtitle} accessibilityRole="text">
+          Esta tarde
+        </Text>
         <Card elevation={2} style={styles.card} accessible={true}>
           <Card.Title subtitle="VIE, JUNIO 8 - 5:00 PM" />
           <Card.Cover

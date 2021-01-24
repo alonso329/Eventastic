@@ -16,8 +16,8 @@ const LoginForm = ({ navigation }) => {
             accessibilityRole="button"
             accessibilityLabel="Retroceder"
             accessibilityHint="Navega a la pagina anterior"
-            icon={() => <FontAwesome name="close" size={40} />}
-            size={25}
+            icon={() => <FontAwesome name="close" size={50} />}
+            size={45}
             onPress={() => navigation.goBack()}
           />
           <Text style={styles.title}> Iniciar sesión </Text>
@@ -26,6 +26,8 @@ const LoginForm = ({ navigation }) => {
           accessibilityLabel="Correo electronico"
           accessibilityHint="Escribe tu correo electronico"
           label="Correo"
+          placeholder="Correo"
+          theme={{ colors: { placeholder: "#3d3d3d" } }}
           value={correo}
           onChangeText={setCorreo}
           type="outlined"
@@ -35,6 +37,8 @@ const LoginForm = ({ navigation }) => {
           accessibilityLabel="Contraseña"
           accessibilityHint="Escribe tu contraseña"
           label="Contraseña"
+          placeholder="Contraseña"
+          theme={{ colors: { placeholder: "#3d3d3d" } }}
           value={password}
           onChangeText={setPassword}
           type="outlined"
@@ -47,7 +51,7 @@ const LoginForm = ({ navigation }) => {
             accessibilityLabel="Confirmar"
             accessibilityHint="Confirma tus datos y avanza a inicio"
             icon={(props) => (
-              <Ionicons name="ios-checkmark-circle" size={80} color="#fcba03" />
+              <Ionicons name="ios-checkmark-circle" size={80} color="#a36a00" />
             )}
             size={45}
             onPress={() => {

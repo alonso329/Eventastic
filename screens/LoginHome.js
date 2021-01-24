@@ -37,6 +37,7 @@ const LoginHome = ({ navigation }) => {
             onPress={() => {
               navigation.push("LoginForm");
             }}
+            style={styles.button}
             accessibilityRole="button"
             accessibilityLabel="Iniciar Sesión"
             accessibilityHint="Ir a la pagina de inicio de sesion"
@@ -44,19 +45,6 @@ const LoginHome = ({ navigation }) => {
             <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
           </TouchableOpacity>
         </View>
-        <TouchableOpacity
-          onPress={() => {
-            navigation.reset({
-              index: 0,
-              routes: [{ name: "TabNavigator" }],
-            });
-          }}
-          accessibilityRole="button"
-          accessibilityLabel="Ir a Home"
-          accessibilityHint="Ir a la pagina principal"
-        >
-          <Text>Ir a home</Text>
-        </TouchableOpacity>
       </View>
     </View>
   );
@@ -74,7 +62,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 15,
   },
   button: {
-    backgroundColor: "#fcba03",
+    backgroundColor: "#a36a00",
     padding: 10,
     alignSelf: "stretch",
     justifyContent: "center",

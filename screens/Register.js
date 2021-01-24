@@ -15,17 +15,22 @@ const Register = ({ navigation }) => {
       <View style={styles.whiteBox} accessible={true}>
         <View style={styles.header} accessible={true}>
           <IconButton
-            icon={(props) => <FontAwesome name="close" size={35} />}
-            size={26}
+            icon={(props) => <FontAwesome name="close" size={50} />}
+            size={45}
             onPress={() => navigation.goBack()}
             accessibilityRole="imagebutton"
             accessibilityLabel="Cancelar"
             accessibilityHint="Cancelar y volver a Home"
           />
-          <Text style={styles.title} accessibilityRole="header"> Registrarse </Text>
+          <Text style={styles.title} accessibilityRole="header">
+            {" "}
+            Registrarse{" "}
+          </Text>
         </View>
         <TextInput
           label="Nombre"
+          placeholder="Nombre"
+          theme={{ colors: { placeholder: "#3d3d3d" } }}
           value={nombre}
           onChangeText={setNombre}
           type="outlined"
@@ -35,6 +40,8 @@ const Register = ({ navigation }) => {
         />
         <TextInput
           label="Correo"
+          placeholder="Correo"
+          theme={{ colors: { placeholder: "#3d3d3d" } }}
           value={correo}
           onChangeText={setCorreo}
           type="outlined"
@@ -44,6 +51,8 @@ const Register = ({ navigation }) => {
         />
         <TextInput
           label="Contraseña"
+          placeholder="Contraseña"
+          theme={{ colors: { placeholder: "#3d3d3d" } }}
           value={password}
           onChangeText={setPassword}
           type="outlined"
@@ -54,6 +63,8 @@ const Register = ({ navigation }) => {
         />
         <TextInput
           label="Confirmar contraseña"
+          placeholder="Confirmar contraseña"
+          theme={{ colors: { placeholder: "#3d3d3d" } }}
           value={rePassword}
           onChangeText={setRePassword}
           type="outlined"
@@ -65,7 +76,7 @@ const Register = ({ navigation }) => {
         <View style={styles.checkButton} accessible={true}>
           <IconButton
             icon={(props) => (
-              <Ionicons name="ios-checkmark-circle" size={80} color="#fcba03" />
+              <Ionicons name="ios-checkmark-circle" size={80} color="#a36a00" />
             )}
             size={45}
             onPress={() => navigation.push("Confirmacion")}
