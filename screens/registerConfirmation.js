@@ -14,7 +14,7 @@ const RegisterConfirmation = ({ navigation }) => {
         <View style={styles.checkButton} accessible={true}>
           <IconButton
             icon={(props) => (
-              <Ionicons name="ios-checkmark-circle" size={80} color="#fcba03" />
+              <Ionicons name="ios-checkmark-circle" size={80} color="#a36a00" />
             )}
             size={42}
             onPress={() => navigation.navigate("LoginHome")}
