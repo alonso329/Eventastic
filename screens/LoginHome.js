@@ -32,19 +32,18 @@ const LoginHome = ({ navigation }) => {
         >
           <Text style={styles.buttonText}>REGISTRARSE</Text>
         </TouchableOpacity>
-        <View style={styles.button} accessible={true}>
-          <TouchableOpacity
-            onPress={() => {
-              navigation.push("LoginForm");
-            }}
-            style={styles.button}
-            accessibilityRole="button"
-            accessibilityLabel="Iniciar Sesión"
-            accessibilityHint="Ir a la pagina de inicio de sesion"
-          >
-            <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
-          </TouchableOpacity>
-        </View>
+
+        <TouchableOpacity
+          onPress={() => {
+            navigation.push("LoginForm");
+          }}
+          style={styles.button}
+          accessibilityRole="button"
+          accessibilityLabel="Iniciar Sesión"
+          accessibilityHint="Ir a la pagina de inicio de sesion"
+        >
+          <Text style={styles.buttonText}>INICIAR SESIÓN</Text>
+        </TouchableOpacity>
       </View>
     </View>
   );
