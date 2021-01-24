@@ -29,7 +29,8 @@ const Home = ({ navigation }) => {
           </Card.Content>
           <Card.Actions accessible={true}>
             <Button
-              color="#fcba03"
+              labelStyle={{ fontSize: 22 }}
+              color="#a36a00"
               onPress={() => {
                 navigation.push("VerMas");
               }}
@@ -40,7 +41,8 @@ const Home = ({ navigation }) => {
               VER MÁS
             </Button>
             <Button
-              color="#fcba03"
+              labelStyle={{ fontSize: 22 }}
+              color="#a36a00"
               onPress={() => {
                 Alert.alert(
                   "Asistirás a Peda Masiva",
@@ -69,18 +71,19 @@ const Home = ({ navigation }) => {
           </Card.Content>
           <Card.Actions accessible={true}>
             <Button
-              color="#fcba03"
+              labelStyle={{ fontSize: 22 }}
+              color="#a36a00"
               onPress={() => {
                 navigation.push("VerMas");
               }}
               accessibilityLabel="Ver Más"
               accessibilityRole="button"
-              accessibilityHint="Ver más informacion del evento"
             >
               VER MÁS
             </Button>
             <Button
-              color="#fcba03"
+              labelStyle={{ fontSize: 22 }}
+              color="#a36a00"
               onPress={() => {
                 Alert.alert(
                   "Asistirás a After party",
@@ -89,7 +92,6 @@ const Home = ({ navigation }) => {
               }}
               accessibilityRole="button"
               accessibilityLabel="Asistir"
-              accessibilityHint="Asistir a este evento"
             >
               ASISTIR
             </Button>
@@ -112,18 +114,19 @@ const Home = ({ navigation }) => {
           </Card.Content>
           <Card.Actions accessible={true}>
             <Button
-              color="#fcba03"
+              labelStyle={{ fontSize: 22 }}
+              color="#a36a00"
               onPress={() => {
                 navigation.push("VerMas");
               }}
               accessibilityLabel="Ver Más"
               accessibilityRole="button"
-              accessibilityHint="Ver más informacion del evento"
             >
               VER MÁS
             </Button>
             <Button
-              color="#fcba03"
+              labelStyle={{ fontSize: 22 }}
+              color="#a36a00"
               onPress={() => {
                 Alert.alert(
                   "Asistirás a Lectura de Biblia",
@@ -132,7 +135,6 @@ const Home = ({ navigation }) => {
               }}
               accessibilityRole="button"
               accessibilityLabel="Asistir"
-              accessibilityHint="Asistir a este evento"
             >
               ASISTIR
             </Button>
