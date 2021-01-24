@@ -25,10 +25,11 @@ const MusicCategory = ({ navigation }) => {
           </Card.Content>
           <Card.Actions>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Ver mas"
               accessibilityHint="Muestra descripcion del evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 navigation.push("VerMas");
               }}
@@ -36,10 +37,11 @@ const MusicCategory = ({ navigation }) => {
               VER MÁS
             </Button>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Asistir"
               accessibilityHint="Marca como que asistiras al evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 Alert.alert(
                   "Asistirás a Garage Band(a)",
@@ -68,10 +70,10 @@ const MusicCategory = ({ navigation }) => {
           </Card.Content>
           <Card.Actions>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Ver mas"
-              accessibilityHint="Muestra descripcion del evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 navigation.push("VerMas");
               }}
@@ -79,10 +81,10 @@ const MusicCategory = ({ navigation }) => {
               VER MÁS
             </Button>
             <Button
+              labelStyle={{ fontSize: 22 }}
               accessibilityRole="button"
               accessibilityLabel="Asistir"
-              accessibilityHint="Marca como que asistiras al evento"
-              color="#fcba03"
+              color="#a36a00"
               onPress={() => {
                 Alert.alert(
                   "Asistirás a Vocaloid",
