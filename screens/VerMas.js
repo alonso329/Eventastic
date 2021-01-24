@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: "flex-end",
   },
   buttonAssist: {
-    backgroundColor: "#fcba03",
+    backgroundColor: "#a36a00",
     paddingHorizontal: 35,
     paddingVertical: 20,
     borderRadius: 30,

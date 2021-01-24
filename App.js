@@ -89,7 +89,7 @@ const TabNavigator = () => {
         activeTintColor: "white",
         inactiveTintColor: "black",
         style: {
-          backgroundColor: "#fcba03",
+          backgroundColor: "#a36a00",
         },
       }}
     >
